@@ -10,7 +10,7 @@ set mbox_type=Maildir
 set mask="!^\\.[^.]"
 
 # list all subdirs in ~/Mail as subdirs
-mailboxes `echo -n "+ "; find ~/Mail -maxdepth 1 -type d -name "*" -printf "+'%f' "`
+mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -type d -name "*" -printf "+'%f' "`
 
 set mail_check=20
 set beep_new
