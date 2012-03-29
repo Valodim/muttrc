@@ -1,0 +1,104 @@
+# this one needs to be symlinked to .muttrc in your home
+
+
+set folder="~/Mail"
+set mbox="~/Mail"
+set record="+Sent"
+set postponed="+Drafts"
+set spoolfile="~/Mail/default"
+set mbox_type=Maildir
+set mask="!^\\.[^.]"
+
+# list all subdirs in ~/Mail as subdirs
+mailboxes `echo -n "+ "; find ~/Mail -maxdepth 1 -type d -name "*" -printf "+'%f' "`
+
+set mail_check=20
+set beep_new
+
+set menu_scroll=yes
+
+bind index  list-reply
+
+bind index K sidebar-prev
+bind index J sidebar-next
+bind index L sidebar-open
+bind pager K sidebar-prev
+bind pager J sidebar-next
+bind pager L sidebar-open
+
+
+set header_cache=$HOME/.header_cache
+
+set     envelope_from                           # spoof mail from address
+set     from="valodim@mugenguild.com"              # default from address
+set     hidden_host                             # cloak system name
+set     hostname="mugenguild.com"           # override system name
+set     realname="Valodim Skywalker"          # real name for From:
+
+# there are no other valodims.
+alternates -group me valodim@.*
+# other mail addresses
+alternates -group me (skywalker|.*breitmoser.*)@mugenguild.com
+
+
+# index settings
+set index_format="%2N %Z %{%b %d} %-15.15F %s"
+
+# composing settings
+set     fast_reply                              # get me to my vim immediately!
+set     include=yes                             # don't ask
+set     allow_8bit                              # do not base64 or mangle msgs
+set     attribution="%n(%a)@%d:"                # attribution in replies
+set     edit_headers
+set     reverse_name                            # set From to the received address
+
+
+# pager settings
+set     ascii_chars                             # ascii chars in threadmarks
+set     beep_new                                # beep when mail arrives
+set     delete=yes                              # delete flagged when exiting
+set     fast_reply                              # don't ask questions
+set     mailcap_path=~/.mutt/mailcap            # where mutt mailcap lives
+set     markers=no                              # wrap without plus signs
+set     pager_context=3                         # page to page line context
+        # format string for pager - nice
+set     pager_format="[%4C/%4m] (%S%Z) %%=%N $i %> [%lL]"
+set     pager_index_lines=6                     # mini-index on pager top
+set     pager_stop                              # don't auto-go to next msg
+set     sort=threads                            # default sort order
+set     sort_aux=reverse-score                  # also sort by score
+set     tilde                                   # pad empty lines like vi
+
+auto_view text/html image/gif image/png image/jpeg
+
+
+                # quench unwanted headers in reader
+ignore          *
+unignore        return-path from: to cc bcc subject resent-by date
+unignore        authenticated-sender apparently-from
+unignore        x-address x-organisation reply-to
+unignore        mail-followup-to user-agent x-mailer
+unignore        x-spammer x-bogosity x-spam-status
+unignore        message-id
+
+                # sort headers
+hdr_order       Return-Path: Message-ID: \
+                From: Resent-By: Reply-To: X-Organisation: \
+                X-Address: To: Cc: Bcc: \
+                Date: X-Bogosity: Subject:
+
+# doesn't work (yet)
+# source $HOME/.mutt/kz
+source $HOME/.mutt/scoring
+source $HOME/.mutt/lists
+source $HOME/.mutt/colors
+source $HOME/.mutt/gpg
+
+source $HOME/.mutt/aliases
+set alias_file="$HOME/.mutt/aliases"
+
+# move to first entry on mutt start
+# not needed anymore, I figured out reverse sorting :)
+# exec first-entry
+
+# vim: filetype=muttrc
