@@ -1,0 +1,9 @@
+# this is not yet functional, anyways..
+set nm_default_uri="notmuch://$HOME/Maildir?query=tag:new"
+set virtual_spoolfile=yes
+bind index <Esc>S sidebar-toggle
+
+virtual-mailboxes \
+    "new" "notmuch://$HOME/Maildir?query=tag:new" \
+
+# vim: filetype=muttrc

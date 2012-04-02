@@ -61,8 +61,8 @@ set     fast_reply                              # don't ask questions
 set     mailcap_path=~/.mutt/mailcap            # where mutt mailcap lives
 set     markers=no                              # wrap without plus signs
 set     pager_context=3                         # page to page line context
-        # format string for pager - nice
-set     pager_format="[%4C/%4m] (%S%Z) %%=%N $i %> [%lL]"
+# format string for pager - nice
+set     pager_format="[%4C/%4m] (%S%Z) %%=%N >> %g %> [%lL]"
 set     pager_index_lines=6                     # mini-index on pager top
 set     pager_stop                              # don't auto-go to next msg
 set     sort=threads                            # default sort order
@@ -88,11 +88,12 @@ hdr_order       Return-Path: Message-ID: \
                 Date: X-Bogosity: Subject:
 
 # doesn't work (yet)
-# source $HOME/.mutt/kz
+source $HOME/.mutt/kz
 source $HOME/.mutt/scoring
 source $HOME/.mutt/lists
 source $HOME/.mutt/colors
 source $HOME/.mutt/gpg
+source $HOME/.mutt/kz-dyn.sh|
 
 source $HOME/.mutt/aliases
 set alias_file="$HOME/.mutt/aliases"
