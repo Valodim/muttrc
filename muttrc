@@ -1,11 +1,11 @@
 # this one needs to be symlinked to .muttrc in your home
 
 
-set folder="~/Mail"
-set mbox="~/Mail"
+set folder="~/Maildir"
+set mbox="~/Maildir"
 set record="+Sent"
 set postponed="+Drafts"
-set spoolfile="~/Mail/default"
+set spoolfile="~/Maildir/default"
 set mbox_type=Maildir
 set mask="!^\\.[^.]"
 
