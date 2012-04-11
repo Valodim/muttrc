@@ -1,6 +1,5 @@
 # this one needs to be symlinked to .muttrc in your home
 
-
 set folder="~/Maildir"
 set mbox="~/Maildir"
 set record="+Sent"
@@ -16,16 +15,6 @@ set mail_check=20
 set beep_new
 
 set menu_scroll=yes
-
-bind index  list-reply
-
-bind index K sidebar-prev
-bind index J sidebar-next
-bind index L sidebar-open
-bind pager K sidebar-prev
-bind pager J sidebar-next
-bind pager L sidebar-open
-
 
 set header_cache=$HOME/.header_cache
 
@@ -94,6 +83,7 @@ source $HOME/.mutt/lists
 source $HOME/.mutt/colors
 source $HOME/.mutt/gpg
 source $HOME/.mutt/kz-dyn.sh|
+source $HOME/.mutt/keymap
 
 source $HOME/.mutt/aliases
 set alias_file="$HOME/.mutt/aliases"
