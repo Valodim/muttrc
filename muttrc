@@ -15,6 +15,7 @@ set mail_check=20
 set beep_new
 
 set menu_scroll=yes
+set sidebar_width=30
 
 set header_cache=$HOME/.header_cache
 
