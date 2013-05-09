@@ -10,4 +10,6 @@ bind pager K sidebar-prev
 bind pager J sidebar-next
 bind pager L sidebar-open
 
+macro attach x ":set mailcap_path=~/.mutt/funnel-mailcap\n<view-mailcap>:reset mailcap_path\n"
+
 # vim: filetype=muttrc

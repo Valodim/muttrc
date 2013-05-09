@@ -1,0 +1,7 @@
+text/*; funnel '%s' '%t'; needsterminal
+application/*; funnel '%s' '%t'; needsterminal
+audio/*; funnel '%s' '%t'; needsterminal
+video/*; funnel '%s' '%t'; needsterminal
+image/*; funnel '%s' '%t'; needsterminal
+message/*; funnel '%s' '%t'; needsterminal
+multipart/*; funnel '%s' '%t'; needsterminal
